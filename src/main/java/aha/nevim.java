@@ -7,8 +7,8 @@ public class nevim {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int player1Points = 0;
-        int player2Points = 0;
+        boolean player1Won = false;
+        boolean player2Won = false;
 
         String[][] array = {
                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", },
@@ -23,9 +23,7 @@ public class nevim {
                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", },
         };
 
-        while(player1Points < 5 || player2Points < 5) {
-            player1Points = 0;
-            player2Points = 0;
+        while(!player1Won || !player2Won) {
             System.out.println(" 0  1  2  3  4  5  6  7  8  9");
             for (String[] strings : array) {
                 System.out.println(Arrays.toString(strings));
@@ -37,101 +35,54 @@ public class nevim {
             int x = sc.nextInt();
             array[x][y] = "X";
 
-            if(array[x-1][y-1].equals("X")) {
-                player1Points++;
-                if(array[x-2][y-2].equals("X")) {
-                    player1Points++;
-                    if(array[x-3][y-3].equals("X")) {
-                        player1Points++;
-                        if(array[x-4][y-4].equals("X")) {
-                            player1Points++;
-                            if(array[x-5][y-5].equals("X")) {
-                                player1Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x-1][y-1].equals("X") && array[x-2][y-2].equals("X") && array[x-3][y-3].equals("X") && array[x-4][y-4].equals("X")) {
+                player1Won = true;
+                System.out.println("Hráč 1 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
+
             }
-            if(array[x+1][y+1].equals("X")) {
-                player1Points++;
-                if(array[x+2][y+2].equals("X")) {
-                    player1Points++;
-                    if(array[x+3][y+3].equals("X")) {
-                        player1Points++;
-                        if(array[x+4][y+4].equals("X")) {
-                            player1Points++;
-                            if(array[x+5][y+5].equals("X")) {
-                                player1Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x+1][y+1].equals("X") && array[x+2][y+2].equals("X") && array[x+3][y+3].equals("X") && array[x+4][y+4].equals("X")) {
+                player1Won = true;
+                System.out.println("Hráč 1 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x-1][y].equals("X")) {
-                player1Points++;
-                if(array[x-2][y].equals("X")) {
-                    player1Points++;
-                    if(array[x-3][y].equals("X")) {
-                        player1Points++;
-                        if(array[x-4][y].equals("X")) {
-                            player1Points++;
-                            if(array[x-5][y].equals("X")) {
-                                player1Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x-1][y].equals("X") && array[x-2][y].equals("X") && array[x-3][y].equals("X") && array[x-4][y].equals("X")) {
+                player1Won = true;
+                System.out.println("Hráč 1 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x+1][y].equals("X")) {
-                player1Points++;
-                if(array[x+2][y].equals("X")) {
-                    player1Points++;
-                    if(array[x+3][y].equals("X")) {
-                        player1Points++;
-                        if(array[x+4][y].equals("X")) {
-                            player1Points++;
-                            if(array[x+5][y].equals("X")) {
-                                player1Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x+1][y].equals("X") && array[x+2][y].equals("X") && array[x+3][y].equals("X") && array[x+4][y].equals("X")) {
+                player1Won = true;
+                System.out.println("Hráč 1 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x][y-1].equals("X")) {
-                player1Points++;
-                if(array[x][y-2].equals("X")) {
-                    player1Points++;
-                    if(array[x][y-3].equals("X")) {
-                        player1Points++;
-                        if(array[x][y-4].equals("X")) {
-                            player1Points++;
-                            if(array[x][y-5].equals("X")) {
-                                player1Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x][y-1].equals("X") && array[x][y-2].equals("X") && array[x][y-3].equals("X") && array[x][y-4].equals("X")) {
+                player1Won = true;
+                System.out.println("Hráč 1 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x][y+1].equals("X")) {
-                player1Points++;
-                if(array[x][y+2].equals("X")) {
-                    player1Points++;
-                    if(array[x][y+3].equals("X")) {
-                        player1Points++;
-                        if(array[x][y+4].equals("X")) {
-                            player1Points++;
-                            if(array[x][y+5].equals("X")) {
-                                player1Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x][y+1].equals("X") && array[x][y+2].equals("X") && array[x][y+3].equals("X") && array[x][y+4].equals("X")) {
+                player1Won = true;
+                System.out.println("Hráč 1 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
 
 
@@ -146,101 +97,54 @@ public class nevim {
             int x2 = sc.nextInt();
             array[x2][y2] = "O";
 
-            if(array[x2-1][y2-1].equals("O")) {
-                player2Points++;
-                if(array[x2-2][y2-2].equals("O")) {
-                    player2Points++;
-                    if(array[x2-3][y2-3].equals("O")) {
-                        player2Points++;
-                        if(array[x2-4][y2-4].equals("O")) {
-                            player2Points++;
-                            if(array[x2-5][y2-5].equals("O")) {
-                                player2Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x2-1][y2-1].equals("O") && array[x2-2][y2-2].equals("O") && array[x2-3][y2-3].equals("O") && array[x2-4][y2-4].equals("O")) {
+                player2Won = true;
+                System.out.println("Hráč číslo 2 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x2+1][y2+1].equals("O")) {
-                player2Points++;
-                if(array[x2+2][y2+2].equals("O")) {
-                    player2Points++;
-                    if(array[x2+3][y2+3].equals("O")) {
-                        player2Points++;
-                        if(array[x2+4][y2+4].equals("O")) {
-                            player2Points++;
-                            if(array[x2+5][y2+5].equals("O")) {
-                                player2Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x2+1][y2+1].equals("O") && array[x2+2][y2+2].equals("O") && array[x2+3][y2+3].equals("O") && array[x2+4][y2+4].equals("O")) {
+                player2Won = true;
+                System.out.println("Hráč číslo 2 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x2-1][y2].equals("O")) {
-                player2Points++;
-                if(array[x2-2][y2].equals("O")) {
-                    player2Points++;
-                    if(array[x2-3][y2].equals("O")) {
-                        player2Points++;
-                        if(array[x2-4][y2].equals("O")) {
-                            player2Points++;
-                            if(array[x2-5][y2].equals("O")) {
-                                player2Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x2-1][y2].equals("O") && array[x2-2][y2].equals("O") && array[x2-3][y2].equals("O") && array[x2-4][y2].equals("O")) {
+                player2Won = true;
+                System.out.println("Hráč číslo 2 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x2+1][y2].equals("O")) {
-                player2Points++;
-                if(array[x2+2][y2].equals("O")) {
-                    player2Points++;
-                    if(array[x2+3][y2].equals("O")) {
-                        player2Points++;
-                        if(array[x2+4][y2].equals("O")) {
-                            player2Points++;
-                            if(array[x2+5][y2].equals("O")) {
-                                player2Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+
+            if(array[x2+1][y2].equals("O") && array[x2+2][y2].equals("O") && array[x2+3][y2].equals("O") && array[x2+4][y2].equals("O")) {
+                player2Won = true;
+                System.out.println("Hráč číslo 2 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x2][y2-1].equals("O")) {
-                player2Points++;
-                if(array[x2][y2-2].equals("O")) {
-                    player2Points++;
-                    if(array[x2][y2-3].equals("O")) {
-                        player2Points++;
-                        if(array[x2][y2-4].equals("O")) {
-                            player2Points++;
-                            if(array[x2][y2-5].equals("O")) {
-                                player2Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x2][y2-1].equals("O") && array[x2][y2-2].equals("O") && array[x2][y2-3].equals("O") && array[x2][y2-4].equals("O")) {
+                player2Won = true;
+                System.out.println("Hráč číslo 2 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
-            if(array[x2][y2+1].equals("O")) {
-                player2Points++;
-                if(array[x2][y+2].equals("O")) {
-                    player2Points++;
-                    if(array[x2][y2+3].equals("O")) {
-                        player2Points++;
-                        if(array[x2][y2+4].equals("O")) {
-                            player2Points++;
-                            if(array[x2][y2+5].equals("O")) {
-                                player2Points++;
-                                System.out.println("Hráč číslo 1 vyhrál");
-                            }
-                        }
-                    }
+            if(array[x2][y2+1].equals("O") && array[x2][y+2].equals("O") && array[x2][y2+3].equals("O") && array[x2][y2+4].equals("O")) {
+                player2Won = true;
+                System.out.println("Hráč číslo 2 vyhrál");
+                for (String[] strings : array) {
+                    System.out.println(Arrays.toString(strings));
                 }
+                break;
             }
         }
     }
