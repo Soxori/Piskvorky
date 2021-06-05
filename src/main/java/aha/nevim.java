@@ -23,7 +23,7 @@ public class nevim {
                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", },
         };
 
-        while(!player1Won || !player2Won) {
+        while(true) {
             System.out.println(" 0  1  2  3  4  5  6  7  8  9");
             for (String[] strings : array) {
                 System.out.println(Arrays.toString(strings));
@@ -90,6 +90,7 @@ public class nevim {
             for (String[] strings : array) {
                 System.out.println(Arrays.toString(strings));
             }
+
 
             System.out.println("Hráč 2: Zadej souradnici x");
             int y2 = sc.nextInt();
